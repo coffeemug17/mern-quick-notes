@@ -4,6 +4,7 @@
 // for making AJAX requests to the server.
 
 import * as usersAPI from './users-api';
+// const Note = require('../../models/note')
 
 export async function signUp(userData) {
   const token = await usersAPI.signUp(userData);
@@ -48,3 +49,8 @@ export async function checkToken() {
         .then(dateStr => new Date(dateStr));
 
 }
+
+// export function getNotes() {
+//   const notes = Note.find();
+//   console.log(notes);
+// }
