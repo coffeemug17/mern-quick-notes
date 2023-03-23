@@ -1,6 +1,3 @@
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-const User = require('../../models/user');
 const Note = require('../../models/note');
 
 module.exports = {
@@ -18,7 +15,7 @@ async function create(req, res) {
     }
 }
 
-function index(req, res) {
-    const notes = Note.find({user: req.user._id});
+async function index(req, res) {
+    const notes = await Note.find({user: req.user._id});
     res.json(notes);
 }

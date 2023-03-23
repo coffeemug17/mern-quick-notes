@@ -1,7 +1,11 @@
 export default function NoteItem({ note, idx }) {
     return (
         <>
-            {note}
+            <li>
+                {note.text}
+                &nbsp;|&nbsp;
+                {new Date(note.createdAt).toLocaleString()}
+            </li>
         </>
     );
 }

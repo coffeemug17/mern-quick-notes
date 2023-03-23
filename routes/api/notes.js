@@ -4,8 +4,8 @@ const notesCtrl = require('../../controllers/api/notes');
 const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 // GET /api/notes
-router.get('/', notesCtrl.index);
+router.get('/', ensureLoggedIn, notesCtrl.index);
 // POST /api/notes
-router.post('/', notesCtrl.create);
+router.post('/', ensureLoggedIn, notesCtrl.create);
 
 module.exports = router;
